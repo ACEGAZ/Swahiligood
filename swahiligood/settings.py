@@ -28,8 +28,8 @@ SECRET_KEY = 'django-insecure-p7xqhsnog+*^!53_8qm!*+c@(ps++&x1#@3ixx=n*vj)_7v#e-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '.herokuapp.com']
-CSRF_TRUSTED_ORIGINS = []
+ALLOWED_HOSTS = ['localhost', '.herokuapp.com', '8000-acegaz-swahiligood-433ivvyfezp.ws-eu108.gitpod.io']
+CSRF_TRUSTED_ORIGINS = ['https://8000-acegaz-swahiligood-433ivvyfezp.ws-eu108.gitpod.io']
 
 
 # Application definition
@@ -42,11 +42,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'whitenoise.runserver_nostatic',
-    'swahiligood',
+    'website',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -77,6 +78,8 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'swahiligood.wsgi.application'
+
+SITE_ID = 1
 
 
 # Database
@@ -124,7 +127,18 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+
+if 'DEVELOPMENT' in os.environ:
+    STATICFILES_DIRS = ((os.path.join(BASE_DIR, 'static')), )
+else:
+    STATIC_ROOT = os.path.join(BASE_DIR, "static")
+
+    
+
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
