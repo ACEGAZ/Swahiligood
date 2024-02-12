@@ -1,0 +1,1 @@
+web: gunicorn swahiligood.wsgi.application
