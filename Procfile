@@ -1,1 +1,1 @@
-web: gunicorn swahiligood.wsgi.application
+web: gunicorn hello:swahiligood.wsgi.application
