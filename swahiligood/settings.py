@@ -30,7 +30,7 @@ development = os.environ.get('DEVELOPMENT', False)
 DEBUG = 'DEVELOPMENT' in os.environ
 # DEBUG = False
 
-ALLOWED_HOSTS = ['localhost', '.herokuapp.com', '8000-acegaz-swahiligood-gkiak1w98z0.ws-eu108.gitpod.io']
+ALLOWED_HOSTS = ['localhost', '.herokuapp.com', '8000-acegaz-swahiligood-6pd653lvk5s.ws-eu108.gitpod.io']
 CSRF_TRUSTED_ORIGINS = ['https://8000-acegaz-swahiligood-433ivvyfezp.ws-eu108.gitpod.io']
 
 

@@ -1,0 +1,8 @@
+body {
+    font-family: Montserrat;
+    background-image: linear-gradient(rgb(240, 228, 121), rgb(255, 255, 255), rgb(126, 184, 126));
+  }
+
+#navbarNav {
+    color: black;
+  }
